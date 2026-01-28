@@ -1,60 +1,60 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Navbar from "./Navbar.jsx";
+import Banner from "./Banner.jsx";
+
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import Counter from "./Counter.jsx";
+import Cards from "./Cards.jsx";
+import Parent from "./Parent.jsx";
+import { createContext, useState } from "react";
+import Sidebar from "./Sidebar.jsx";
+import { GlobalValue } from "./GlobalContext.jsx";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  const arr = [12, 34, 45];
-  console.log(arr);
-  // const num1 = arr[0];
-  // const num2 = arr[1];
-  // const num3 = arr[2];
+  const [val, setVal] = useState("Raj");
 
-  const [num1, num2, num3, num4] = arr; //destructuring
-  console.log(num1);
-  console.log(num2);
+  const products = [
+    {
+      brand: "Samsung",
+      price: "2000",
+    },
+    {
+      brand: "vivo",
+      price: "2000",
+    },
+    {
+      brand: "Samsung",
+      price: "2000",
+    },
+    {
+      brand: "Samsung",
+      price: "2000",
+    },
+    {
+      brand: "Samsung",
+      price: "2000",
+    },
+    {
+      brand: "Samsung",
+      price: "2000",
+    },
+  ];
 
-  // console.log(...arr);
-
-  // console.log(num2);
-
-  const std = {
-    name: "John",
-    age: 22,
-    course: "MERN",
-  };
-
-  // const name = std.name;
-
-  const { name } = std; //destructuring
-
-  console.log(name);
-
-  const fiv1 = document.createElement("div");
+  {
+    products.map((item) => {
+      return <Card name={item.name} price={item.price} />;
+    });
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        {/* <button onClick={() => setCount((count) => count + 1)}> */}
-        {/* count is {count} */}
-        {/* </button> */}
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Clickssss on the Vite and React logos to learn more
-      </p>
-    </>
+    <PrimeReactProvider>
+      <GlobalValue.Provider value={val}>
+        <div style={{ display: "flex" }}>
+          <Sidebar></Sidebar>
+          <Parent></Parent>
+        </div>
+      </GlobalValue.Provider>
+    </PrimeReactProvider>
   );
 }
 
