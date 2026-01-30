@@ -4,6 +4,8 @@ const Login = () => {
   const [uname, setUname] = useState("");
   const [pass, setPass] = useState("");
 
+  // setUname("hi");
+
   const notify = () => toast.error("make striong password");
 
   const handleUserName = (e) => {
