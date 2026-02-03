@@ -8,6 +8,7 @@ import Sidebar from "./Sidebar.jsx";
 import { GlobalValue } from "./GlobalContext.jsx";
 import Login from "./Login.jsx";
 import RenderTest from "./CustomRef.jsx";
+import UncontrolledForm from "./UncontrolledForm.jsx";
 
 function App() {
   const [val, setVal] = useState("Raj");
@@ -17,6 +18,7 @@ function App() {
       <GlobalValue.Provider value={val}>
         <RenderTest></RenderTest>
         <Login></Login>
+        <UncontrolledForm />
       </GlobalValue.Provider>
     </PrimeReactProvider>
   );

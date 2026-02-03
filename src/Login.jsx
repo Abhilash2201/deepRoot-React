@@ -3,6 +3,8 @@ import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
   const [uname, setUname] = useState("");
   const [pass, setPass] = useState("");
+  const [ErrorInfo, setErrorInfo] = useState("erroer info");
+  console.log("rendred");
 
   // setUname("hi");
 
@@ -21,14 +23,6 @@ const Login = () => {
           name="userName"
           id="userName"
           value={uname}
-          //   onChange={(e) => {
-          //     setUname(e.target.value);
-          //   }}
-
-          //   onChange={(e) => {
-          //     handleUserName(e);
-          //   }}
-
           onChange={handleUserName}
         />
       </section>
@@ -41,11 +35,28 @@ const Login = () => {
           value={pass}
           onChange={(e) => {
             setPass(e.target.value);
+
+            if (e.target.value.length < 5 && e.target.value.length > 1) {
+              setErrorInfo("password is too short");
+            } else if (e.target.value.length > 5) {
+              setErrorInfo("password is too long");
+            } else {
+              setErrorInfo("Error Info");
+            }
           }}
         />
       </section>
+      <section style={{ color: "red" }}> {ErrorInfo}</section>
+      <br></br>
       <section style={{ display: "flex", gap: "8px", padding: "10px" }}>
-        <button>Cancel</button>
+        <button
+          onClick={() => {
+            setPass("");
+            setUname("");
+          }}
+        >
+          Cancel
+        </button>
         <button
           onClick={() => {
             notify();
