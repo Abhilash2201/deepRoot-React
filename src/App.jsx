@@ -9,6 +9,7 @@ import { GlobalValue } from "./GlobalContext.jsx";
 import Login from "./Login.jsx";
 import RenderTest from "./CustomRef.jsx";
 import UncontrolledForm from "./UncontrolledForm.jsx";
+import LifeCycleDemo from "./LifeCycleDemo.jsx";
 
 function App() {
   const [val, setVal] = useState("Raj");
@@ -16,9 +17,10 @@ function App() {
   return (
     <PrimeReactProvider>
       <GlobalValue.Provider value={val}>
-        <RenderTest></RenderTest>
-        <Login></Login>
-        <UncontrolledForm />
+        {/* <RenderTest></RenderTest> */}
+        {/* <Login></Login> */}
+        {/* <UncontrolledForm /> */}
+        <LifeCycleDemo />
       </GlobalValue.Provider>
     </PrimeReactProvider>
   );
