@@ -10,17 +10,22 @@ import Login from "./Login.jsx";
 import RenderTest from "./CustomRef.jsx";
 import UncontrolledForm from "./UncontrolledForm.jsx";
 import LifeCycleDemo from "./LifeCycleDemo.jsx";
+import ResizeComponent from "./UnmountExample.jsx";
+import NavBar from "./Navbar.jsx";
+import Home from "./Home.jsx";
+import { Route, Routes } from "react-router-dom";
+import About from "./About.jsx";
+import Contact from "./Contact.jsx";
 
 function App() {
   const [val, setVal] = useState("Raj");
+  const [show, setShow] = useState(true);
 
   return (
     <PrimeReactProvider>
       <GlobalValue.Provider value={val}>
-        {/* <RenderTest></RenderTest> */}
-        {/* <Login></Login> */}
-        {/* <UncontrolledForm /> */}
-        <LifeCycleDemo />
+        {/* <button onClick={() => setShow(!show)}>Toggle Component</button>
+        {show && <ResizeComponent />} */}
       </GlobalValue.Provider>
     </PrimeReactProvider>
   );

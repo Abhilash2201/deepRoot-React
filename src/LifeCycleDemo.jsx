@@ -20,13 +20,15 @@ const LifeCycleDemo = () => {
 
   useEffect(() => {
     console.log("component updated");
+
+    fetchData;
   }, [notCount]);
 
-  //   useEffect(() => {
-  //     return () => {
-  //       console.log("component unmounted");
-  //     };
-  //   }, [notCount]);
+  useEffect(() => {
+    return () => {
+      console.log("component unmounted");
+    };
+  }, [notCount]);
 
   return (
     <>
