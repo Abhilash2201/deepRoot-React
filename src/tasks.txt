@@ -1,5 +1,6 @@
 Routes
 1.create a component(About, home, Logn)
+
 2.install react-router-dom--> BrowserRouter-->Routes-->Route(path=/about elemnt=About)
 
 3.Link to=/about
