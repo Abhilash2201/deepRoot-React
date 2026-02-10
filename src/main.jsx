@@ -11,6 +11,7 @@ import Login from "./screens/Login.jsx";
 import Products from "./screens/Products.jsx";
 import NavBar from "./components/Navbar.jsx";
 import Home from "./Home.jsx";
+import ProductDetails from "./screens/ProductDetails.jsx";
 // import "primeicons/primeicons.css";
 
 createRoot(document.getElementById("root")).render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -22,7 +24,9 @@ const Products = () => {
             <div
               style={{ border: "1px solid", padding: "8px" }}
               onClick={() => {
-                console.log(data);
+                navigate(`/product/${data.id}`, {
+                  state: data,
+                });
               }}
             >
               <p>username:{data.username}</p>
